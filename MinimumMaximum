@@ -1,0 +1,40 @@
+//Import Scanner class
+import java.util.*;
+
+public class MinimumMaximum {
+    public static void main(String[] args) {
+        //Create Sccanner object
+        Scanner sc = new Scanner(System.in);
+
+        //Input number of test cases
+        int T = sc.nextInt();
+
+        //Loop till the number of test cases
+        for(int i=0; i<T; i++) {
+            //Input the array size
+            int n = sc.nextInt();
+
+            //Declare array of integers
+            int[] arr = new int[n];
+
+            //Input the array elements
+            for(int j=0; j<n; j++) {
+                arr[j] = sc.nextInt();
+            }
+
+            //Sort the array
+            Arrays.sort(arr);
+
+            int count = 0;
+            //Count the number of operations to remove all the elements except the smallest number
+            for(int j=0; j<n-1; j++) {
+                count++;
+            }
+
+            //Multiply the count with the smallest number in the array
+            System.out.println(count * arr[0]);
+        }
+
+        sc.close();
+    }
+}
